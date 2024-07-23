@@ -5,6 +5,7 @@ import eye from './img/eye.png'
 import hide from './img/hide.png'
 import alert_img from './img/alert.png'
 import { useNavigate } from 'react-router-dom';
+import "./Login.css";
 const Login = () => {
     const [message,setMessage]=useState('null')
     const navigate=useNavigate()
@@ -32,7 +33,7 @@ const Login = () => {
     }
     useEffect(() => {
       if (redirect) {
-        navigate('/'); 
+        navigate('/');
       }
     }, [redirect, navigate]);
     const handleClick=()=>{
@@ -42,46 +43,86 @@ const Login = () => {
   let pass_img=pass_change?hide:eye
   return (
     <main>
-    <div id="loginBox">
-    {loader?
-      <div style={{height:'50%',width:'50%',display:'flex',justifyContent:'center',alignItems:'center',alignSelf:'center',position:'absolute',zIndex:2,gap:20}}>
-      <div className="loader"></div><p  style={{fontSize:20,fontWeight:900}}>checking...</p>
+      <div id="loginBox">
+        {loader ? (
+          <div
+            style={{
+              height: "50%",
+              width: "50%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              alignSelf: "center",
+              position: "absolute",
+              zIndex: 2,
+              gap: 20,
+            }}
+          >
+            <div className="loader"></div>
+            <p style={{ fontSize: 20, fontWeight: 900 }}>Authenticating...</p>
+          </div>
+        ) : (
+          <></>
+        )}
+        <form onSubmit={setDataToserver}>
+          <h2 class="gradient-text">Login to Luxora</h2>
+          <div className="input-box">
+            <input
+              type="email"
+              required
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <label> Email</label>
+          </div>
+          <div className="input-box">
+            <span className="icon">
+              <img
+                src={pass_img}
+                alt="image_clicked_handle"
+                id="handlePasswordClick"
+                onClick={() => handleClick()}
+              />
+            </span>
+            <input
+              type={pass_type}
+              required
+              name="password"
+              id="enterpassword"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <label>Enter Password</label>
+          </div>
+          <br />
+          <div className="remember-forget">
+            <label>
+              <input type="checkbox" />
+              <span>Remember Me</span>
+            </label>
+            <a href="/signup">Forgot Password ?</a>
+          </div>
+          <br />
+          {message === "null" ? (
+            <></>
+          ) : (
+            <div id="errors">
+              <img src={alert_img} alt="alert_image_settled" />
+              <p className="errorMessage">{message}</p>
+            </div>
+          )}
+          <button type="Submit">Login</button>
+          <div className="register-link">
+            <p id="account">
+              Don't have an account?
+              <a href="/signup"> Register</a>
+            </p>
+          </div>
+        </form>
       </div>
-      :<></>
-}
-      <form onSubmit={setDataToserver}>
-        <h2>Login</h2>
-        <div className="input-box">
-          <input type="email" required name="email" value={email} onChange={(e)=>setEmail(e.target.value)} />
-          <label> Email</label>
-        </div>
-        <div className="input-box">
-          <span className="icon"><img src={pass_img} alt="image_clicked_handle" id="handlePasswordClick" onClick={()=>handleClick()}/></span>
-          <input type={pass_type} required name="password" id="enterpassword" value={password} onChange={(e)=>setPassword(e.target.value)}/>
-          <label>Enter Password</label>
-        </div>
-        <div className="remember-forget">
-          <label>
-            <input type="checkbox" /><span>Remember Me</span>
-          </label>
-          <a href='/signup'>Forget Password</a>
-        </div>
-        {message==='null'?<></>:
-        <div id="errors">
-         <img src={alert_img} alt='alert_image_settled' />
-        <p className="errorMessage">{message}</p>
-        </div>
-}
-        <button type="Submit">Login</button>
-        <div className="register-link">
-          <p id="account">Don't have an account?
-            <a href="/signup">Register</a>
-          </p>
-        </div>
-      </form>
-    </div>
-</main>
-  )
+    </main>
+  );
 }
 
 export default Login

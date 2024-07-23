@@ -1,0 +1,31 @@
+main {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #54337f, #2b798b, #f34470, #a63da3);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.gradient-text {
+    background: linear-gradient(135deg, #4c2383, #0b4856, #840e2b, #9e0899);
+    -webkit-background-clip: text;
+    color: transparent;
+    background-clip: text;
+}

@@ -1,14 +1,16 @@
 .container{
     display: grid;
     grid-template-columns: 1fr;
+    background: linear-gradient(135deg, #4c2383, #0b4856, #840e2b, #9e0899);
 }
 #product_page{
+    background: linear-gradient(135deg, #4c2383, #0b4856, #840e2b, #9e0899);
     display: grid;
     grid-template-columns: 1fr;
     grid-column-gap: 40px;
     width: 100%;
     height: 100vh;
-    margin-top: 60px;
+    margin-top: 0px;
 }
 .size_button{
     color: black;

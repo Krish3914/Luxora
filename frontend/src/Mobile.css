@@ -1,14 +1,16 @@
 #mobile_page{
    display: flex;
     background-color: white;
+    background: linear-gradient(135deg, #54337f, #2b798b, #f34470, #a63da3);
     flex-direction: column;
     width:100%;
-    margin-top: 60px;
-    height: 100vh;
+    padding-top: 60px;
+    height: 100%;
     gap: 2rem;
 }
 #container{
     color: white;
+    /* background: linear-gradient(135deg, #54337f, #2b798b, #f34470, #a63da3); */
     display: flex;
     flex:1 0 8rem;
     gap: 1rem;

@@ -3,9 +3,11 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  /* background: (135deg, #54337f, #2b798b, #f34470, #a63da3); */
 }
 #cart_page{
-  margin-top: 60px;
+  margin-top: 0px;
+  height: 100%;
 }
 body{
   overflow-x: hidden;
@@ -25,23 +27,24 @@ section,main{
 #loginBox{
   position: relative;
   width: 400px;
-  height: 490px;
+  height: 520px;
   background:transparent;
   border: none;
   border-radius:100px 0 70px 0 ;
   display: flex;
-  background-color: lightgreen;
+  background-color: rgb(141, 84, 23);
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(15px);
-  -webkit-box-shadow:0px 0px 26px 0px rgba(27,224,34,0.89);
--moz-box-shadow: 0px 0px 26px 0px rgba(27,224,34,0.89);
-box-shadow: 0px 0px 26px 0px rgba(27,224,34,0.89);
+  -webkit-box-shadow:0px 0px 26px 0px rgba(145, 110, 28, 0.89);
+-moz-box-shadow: 0px 0px 26px 0px rgba(109, 101, 37, 0.89);
+box-shadow: 0px 0px 26px 0px rgba(189, 154, 46, 0.89);
 }
 
 h2{
   font-size: 2em;
-  color: black;
+  color: rgb(178, 172, 187);
+  /* background: linear-gradient(135deg, #54337f, #2b798b, #f34470, #a63da3); */
   text-align: center;
 }
 .input-box{
@@ -98,7 +101,7 @@ h2{
   margin: right 3px;
 }
 .errorMessage{
-  color: red;
+  color: rgb(223, 153, 153);
   padding-bottom: 10px;
 }
 nav{
@@ -107,7 +110,7 @@ nav{
   justify-content:space-between;
 }
 .remember-forget a{
-  color: black;
+  color: rgb(209, 122, 179);
   text-decoration: none;
 }
 img{width: 30px;}
@@ -254,6 +257,12 @@ nav a:hover{
 }
 #fashion_page{
   margin-top: 70px;
+}
+#payment_page {
+  background: linear-gradient(135deg, #4c2383, #0b4856, #840e2b, #9e0899);
+  height: 100vh;
+  margin-top: 0px;
+  margin-top: 0px;
 }
 img{
   object-fit: contain;
